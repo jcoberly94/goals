@@ -7,7 +7,7 @@ import SweetAlert from 'react-bootstrap-sweetalert'
 import api from 'api' 
 import styles from 'styles/addGoal.module.scss'
 
-class AddGoal extends Component {
+export default class AddGoal extends Component {
     state = {
         open: false,
         error: false,
@@ -61,7 +61,6 @@ class AddGoal extends Component {
     }
 
     render() {
-
         return(
             <>
                 <IconButton onClick={this.handleClick}><Add style={{color: '#fff'}} /></IconButton>
@@ -154,4 +153,3 @@ function NumberFormatCustom(props) {
       />
     );
   }
-export default AddGoal

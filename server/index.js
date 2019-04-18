@@ -19,40 +19,26 @@ app.use(bodyParser.json())
 
 app.get('/goals', (req, res) => {
     Goal.find()
-        .then(goals => {
-            res.send({goals})
-        })
-        .catch(err => {
-            res.status(400).send(err)
-        })
+        .then(goals => res.send({goals}))
+        .catch(err => res.status(400).send(err))
 })
 
 app.post('/goals', (req, res) => {
     let goal = new Goal(req.body)
     goal.save()
-        .then(doc => {
-            res.send(doc)
-        })
-        .catch(err => {
-            res.status(400).send(err)
-        })
+        .then(doc => res.send(doc))
+        .catch(err => res.status(400).send(err))
 })
 
 app.delete('/goals', (req, res) => {
     Goal.findByIdAndDelete({_id: req.query.id})
-        .then(doc => {
-            res.send(doc)
-        })
-        .catch(err => {
-            res.status(400).send(err)
-        })
+        .then(doc => res.send(doc))
+        .catch(err => res.status(400).send(err))
 })
 
 app.put('/goals', (req,res) => {
     Goal.findByIdAndUpdate({_id: req.body._id}, {$set: req.body})
-        .then(doc => {
-            res.send(doc)
-        })
+        .then(doc => res.send(doc))
         .catch(err => res.status(400).send(err))
 })
 

@@ -7,7 +7,7 @@ import DeleteGoal from 'components/DeleteGoal'
 import api from 'api' 
 import styles from 'styles/addGoal.module.scss'
 
-class EditGoal extends Component {
+export default class EditGoal extends Component {
     state = {
         open: false,
         name: this.props.data.name,
@@ -55,7 +55,6 @@ class EditGoal extends Component {
     }
 
     render() {
-
         return(
             <>
                 <IconButton onClick={this.handleClick}><More /></IconButton>
@@ -139,4 +138,3 @@ function NumberFormatCustom(props) {
       />
     );
   }
-export default EditGoal

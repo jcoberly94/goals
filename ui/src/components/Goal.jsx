@@ -8,11 +8,10 @@ import EditGoal from 'components/EditGoal'
 import styles from 'styles/goal.module.scss'
 
 
-class Goal extends Component {
+export default class Goal extends Component {
     render() {
         let {name, cost, current, monthlySavings, dateAdded, image, description} = this.props.goal
         return (
-
             <div className={styles.container}>
                 <div className={styles.header}>
                     <div>
@@ -65,4 +64,3 @@ class Goal extends Component {
         )
     }
 }
-export default Goal

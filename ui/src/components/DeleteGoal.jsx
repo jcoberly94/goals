@@ -2,12 +2,11 @@ import React, {Component} from 'react'
 import Delete from '@material-ui/icons/Delete' 
 import {IconButton} from '@material-ui/core'
 import SweetAlert from 'react-bootstrap-sweetalert'
-import api from 'api'
 
+import api from 'api'
 import styles from 'styles/deleteGoal.module.scss'
 
-class DeleteGoal extends Component {
-
+export default class DeleteGoal extends Component {
     state = {
         show: false,
         success: false
@@ -24,7 +23,6 @@ class DeleteGoal extends Component {
     }
 
     render() {
-
         return (
             <>
                 <div className={styles.button}><IconButton onClick={() => this.setState({show: true})}><Delete /></IconButton></div>
@@ -46,4 +44,3 @@ class DeleteGoal extends Component {
         )
     }
 }
-export default DeleteGoal
